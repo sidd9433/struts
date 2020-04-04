@@ -1,5 +1,5 @@
-/*
-
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- 
     Licensed to the Apache Software Foundation (ASF) under one or more
     contributor license agreements.  See the NOTICE file distributed with
     this work for additional information regarding copyright ownership.
@@ -14,31 +14,9 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-*/
-package org.superbiz.struts;
-
-import org.springframework.stereotype.Repository;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.util.List;
-
-@Repository
-public class UserServiceImpl implements UserService {
-
-    @PersistenceContext
-    private EntityManager manager;
-
-    public void add(User user) {
-        manager.persist(user);
-    }
-
-    public User find(long id) {
-        return manager.find(User.class, id);
-    }
-
-    public List<User> findAll() {
-        return manager.createQuery("select u from User u").getResultList();
-    }
-
-}
+ -->
+<decorators defaultdir="/decorators">
+    <decorator name="main" page="layout.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>
